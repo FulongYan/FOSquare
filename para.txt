@@ -1,0 +1,72 @@
+void Optical::insertMessage(pkt *msg)
+{
+    take(msg); // take ownership
+    Optical_pkts_var.push_back(msg); // store pointer
+}
+pkt * Optical::popMessage()
+{
+    pkt *msg = Optical_pkts_var.pop_back();
+    drop(msg); // release ownership
+}
+
+virtual void Optical::insertMessage(pkt *msg);
+virtual pkt * Optical::popMessage();
+
+
+
+
+
+
+
+void Optical::insertMessage(pkt *msg)
+{
+    take(msg); // take ownership
+    Optical_pkts_var.push_back(msg); // store pointer
+}
+void Optical::removeMessage(pkt *msg)
+{
+    Optical_pkts_var.remove(msg);
+    drop(msg); // release ownership
+}
+
+
+virtual void insertMessage(pkt *msg);
+virtual void removeMessage(pkt *msg);
+
+
+
+
+
+
+
+
+
+void Optical::insertMessage(pkt *msg)
+{
+    take(msg); // take ownership
+    Optical_pkts_var.push(msg); // store pointer
+}
+pkt * Optical::removeMessage()
+{
+    pkt *msg = Optical_pkts_var.pop();
+    drop(msg); // release ownership
+    return msg;
+}
+
+    virtual void insertMessage(pkt *msg);
+    virtual pkt *  removeMessage();
+    
+    
+    
+    void Optical::insertMessage(pkt *msg)
+{
+    take(msg); // take ownership
+    Optical_pkts_var.push_back(msg); // store pointer
+}
+void Optical::removeMessage(pkt * msg)
+{
+    Optical_pkts_var.remove(msg);
+    drop(msg); // release ownership
+}
+    virtual void insertMessage(pkt *msg);
+    virtual void removeMessage(pkt *msg);
